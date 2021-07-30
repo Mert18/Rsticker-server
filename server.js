@@ -1,6 +1,5 @@
 
 import express from 'express';
-import dotenv from 'dotenv';
 
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -10,12 +9,13 @@ import connectDB from './config/db.js';
 
 import {notFound, errorHandler} from './middleware/errorMiddleware.js';
 
-dotenv.config();
+import cors from 'cors';
 
 connectDB();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
