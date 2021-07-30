@@ -1,0 +1,27 @@
+{
+  "name": "rsticker-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "seeder.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mert18/Rsticker-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mert18/Rsticker-server/issues"
+  },
+  "homepage": "https://github.com/Mert18/Rsticker-server#readme",
+  "dependencies": {
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
