@@ -22,7 +22,7 @@ const authUser = asyncHandler(async(req, res) => {
         })
     } else {
         res.status(401);
-        throw new Error('Invalid email or password.');
+        throw new Error('Geçersiz kullanıcı adı ya da şifre.');
     }
 })
 
@@ -43,7 +43,7 @@ const getUserProfile = asyncHandler(async(req, res) => {
         })
     } else {
         res.status(404);
-        throw new Error('Invalid email or password');
+        throw new Error('Geçersiz kullanıcı adı ya da şifre.');
     }
 })
 
@@ -57,7 +57,7 @@ const registerUser = asyncHandler(async(req, res) => {
 
     if(userExists){
         res.status(400);
-        throw new Error('User already exists.');
+        throw new Error('Bu email adresi zaten kayıtlı.');
     }
 
     const user = await User.create({
@@ -76,7 +76,7 @@ const registerUser = asyncHandler(async(req, res) => {
         })
     } else {
         res.status(400);
-        throw new Error('Invalid user data.');
+        throw new Error('Lütfen bilgileri doğru girdinizden emin olun.');
     }
 })
 
@@ -107,7 +107,7 @@ const updateUserProfile = asyncHandler(async(req, res) => {
 
     } else {
         res.status(404);
-        throw new Error('User not found.')
+        throw new Error('Kullanıcı bulunamadı.')
     }
     if(user){
         res.status(201).json({
@@ -119,7 +119,7 @@ const updateUserProfile = asyncHandler(async(req, res) => {
         })
     } else {
         res.status(400);
-        throw new Error('Invalid user data.');
+        throw new Error('Kullanıcı bulunamadı.');
     }
 })
 
